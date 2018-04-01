@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>导入demo</title>
+    <title>js-xlsx</title>
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <script src="http://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="http://cdn.bootcss.com/vue/2.2.4/vue.min.js"></script>
@@ -50,13 +50,13 @@
                 <div class="input-group" style="width: 451px;" onclick="$('#FileInput')[0].click()">
                     <span class="input-group-btn">
                         <button class="btn btn-info" type="button">
-                            <i class="glyphicon glyphicon-folder-open"></i>选择文件</button>
+                            <i class="glyphicon glyphicon-folder-open"></i>选择文件/chose file</button>
                     </span>
-                    <input type="text" class="form-control" placeholder="请选择文件" readonly="readonly" v-model="fileInfo.name">
+                    <input type="text" class="form-control" placeholder="请选择文件/chose file" readonly="readonly" v-model="fileInfo.name">
                 </div>
                 <div class="input-group" style="width: 151px;">
                     <span class="input-group-btn" style="font-size: 10px;line-height: 30px;">
-                        {{'文件大小:'+fileInfo.size+'b'}}
+                        {{'文件大小/filesize:'+fileInfo.size+'b'}}
                     </span>
                 </div>
             </div>
@@ -98,12 +98,12 @@
                     app.fileInfo.size = ImportFile.size;
                     var obj = [];
                     file2Xce(ImportFile).then(function (t) {
-                        console.log("执行完毕");
+                        console.log("ok");
                         // console.log(t);
-                        for (var i = 0; i < t.length; i++) {
+                        //for (var i = 0; i < t.length; i++) {
                             // console.log(t[i])
                             
-                        }
+                        //}
                         if (t && t.length > 0) {
                             var tmpHead = [];
                             var pmodel = {};
@@ -116,7 +116,7 @@
                         }
                     });
                 } else {
-                    alert("格式错误！请重新选择");
+                    alert("its not .xlsx file,please chose again");
                 }
             }
         }
